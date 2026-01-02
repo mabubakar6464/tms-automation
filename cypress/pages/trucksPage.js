@@ -118,6 +118,10 @@ class TrucksPage {
         }
 
         cy.get(trucksSelectors.saveButton).click();
+
+        cy.get(trucksSelectors.successToast, { timeout: 10000 })
+            .should('exist')
+            .and('contain', 'Truck record created successfully');
     }
 }
 export default new TrucksPage();

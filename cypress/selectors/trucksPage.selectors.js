@@ -20,7 +20,8 @@ const trucksPageSelectors = {
     deerGuardButton: 'button:contains("Deer Guard")',
     killSwitchButton: 'button:contains("Kill Switch")',
     headacheRackButton: 'button:contains("Headache Rack")',
-    saveButton: 'button:contains("Add")'
+    saveButton: 'button:contains("Add")',
+    successToast: '.Toastify__toast'
 };
 
 export default trucksPageSelectors;

@@ -1,4 +1,5 @@
 import TrucksPage from "../pages/trucksPage";
+import trucksSelectors from "../selectors/trucksPage.selectors.js";
 
 describe('Trucks Module Tests', () => {
 
@@ -12,7 +13,7 @@ describe('Trucks Module Tests', () => {
       TrucksPage.clickAddTruck();
       TrucksPage.addTruckDetails(data.trucks[0]);
     });
-    cy.get('.Toastify__toast', { timeout: 10000 })
+    cy.get(trucksSelectors.successToast, { timeout: 10000 })
       .should('exist')
       .and('contain', 'Truck record created successfully');
   });
