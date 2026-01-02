@@ -50,7 +50,7 @@ class TrucksPage {
         cy.get(trucksSelectors.iftaDecalInput).type(decal);
     }
     enterPlates(plates) {
-        cy.get(trucksSelectors.platesinput).type(plates);
+        cy.get(trucksSelectors.platesInput).type(plates);
     }
 
     selectRandomOption(selector) {
@@ -59,6 +59,11 @@ class TrucksPage {
             const index = Math.floor(Math.random() * $options.length);
             cy.wrap($options).eq(index).click();
         });
+    }
+
+    selectActivestatus(selector) {
+        cy.get(selector).click();
+        cy.get('ul:visible li:visible').contains('Active').click();
     }
 
     generateUniqueUnitId() {
@@ -89,7 +94,8 @@ class TrucksPage {
 
 
     addTruckDetails(data) {
-        this.enterUnitId(this.generateUniqueUnitId());
+        const unitId = this.generateUniqueUnitId();
+        this.enterUnitId(unitId);
         this.selectRandomOption(trucksSelectors.typeInput);
         this.enterMake(data.make);
         this.enterModel(data.model);
@@ -97,15 +103,15 @@ class TrucksPage {
         this.enterColor(data.color);
         this.selectRandomOption(trucksSelectors.transmissionInput);
         this.enterNtlAndPD(data.ntlAndPd);
-        this.selectRandomOption(trucksSelectors.statusInput);
+        this.selectActivestatus(trucksSelectors.statusInput);
         this.enterVendor(data.vendor);
-        this.selectEngine(data.engine);
+        this.selectRandomOption(trucksSelectors.engineInput);
         this.enterVin(this.generateRandomVIN());
         this.enterLastInspectionDate(data.lastInspectionDt);
         this.enterIftaAddDate(data.companyIftaAdd);
         this.enterIftaDecal(data.iftaDecal);
-        this.enterPlates(this.generatePlateNumber());
-        this.selectRandomOption(trucksSelectors.platesStateInput);
+        //this.enterPlates(this.generatePlateNumber());
+        //this.selectRandomOption(trucksSelectors.platesStateInput);
 
         if (data.deerGuard == true) {
             cy.get(trucksSelectors.deerGuardButton).click();
@@ -119,9 +125,11 @@ class TrucksPage {
 
         cy.get(trucksSelectors.saveButton).click();
 
-        cy.get(trucksSelectors.successToast, { timeout: 10000 })
+        return cy.get(trucksSelectors.successToast, { timeout: 10000 })
             .should('exist')
-            .and('contain', 'Truck record created successfully');
+            .and('contain', 'Truck record created successfully')
+            .then(() => unitId);
     }
+
 }
 export default new TrucksPage();

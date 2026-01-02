@@ -15,13 +15,14 @@ const trucksPageSelectors = {
     lastInspectionDateInput: 'input[name="lastInspectionDt"]',
     iftaAddDateInput: 'input[name="companyIftaAdd"]',
     iftaDecalInput: 'input[name="iftaDecal"]',
-    platesinput: 'input[name="licencePlate"]',
+    platesInput: 'input[name="licencePlate"]',
     platesStateInput: 'button[name="licencePlateState"]',
     deerGuardButton: 'button:contains("Deer Guard")',
     killSwitchButton: 'button:contains("Kill Switch")',
     headacheRackButton: 'button:contains("Headache Rack")',
     saveButton: 'button:contains("Add")',
-    successToast: '.Toastify__toast'
+    successToast: '.Toastify__toast',
+    truckTable: '[role="rowgroup"]'
 };
 
 export default trucksPageSelectors;
