@@ -12,6 +12,9 @@ describe('Trucks Module Tests', () => {
       TrucksPage.clickAddTruck();
       TrucksPage.addTruckDetails(data.trucks[0]);
     });
+    cy.get('.Toastify__toast', { timeout: 10000 })
+      .should('exist')
+      .and('contain', 'Truck record created successfully');
   });
 
 });
