@@ -1,0 +1,25 @@
+{
+    "trucks": [
+        {
+            "make": "Ford",
+            "model": "F150",
+            "year": 2020,
+            "color": "Red",
+            "equipmentType": "Truck",
+            "transmission": "Automatic",
+            "ntlAndPd": "300",
+            "status": "Active",
+            "vendor": "Vendor A",
+            "lastInspectionDt": "01-02-2026",
+            "companyIftaAdd": "01-02-2026",
+            "iftaDecal": "Decal 1",
+            "licencePlateState": "CA",
+            "licencePlateExpDt": "01-31-2026",
+            "accessories": {
+                "deerGuard": "Yes",
+                "killSwitch": "No",
+                "headacheRack": "Yes"
+            }
+        }
+    ]
+}

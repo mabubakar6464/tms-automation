@@ -1,0 +1,28 @@
+const trucksPageSelectors = {
+    addTruckButton: 'button:has(svg[data-testid="AddBoxIcon"])',
+    unitIDInput: 'input[name="unitId"]',
+    typeInput: 'button[name="equipmentType"]',
+    makeInput: 'input[name="make"]',
+    modelInput: 'input[name="model"]',
+    yearInput: 'button[name="year"]',
+    colorInput: 'input[name="color"]',
+    transmissionInput: 'button[name="transmission"]',
+    ntlAndPDInput: 'input[name="ntlAndPd"]',
+    statusInput: 'button[name="status"]',
+    vendorInput: 'input[id="autocomplete-vendorText"]',
+    engineInput: 'button[name="engine"]',
+    vinInput: 'input[name="vin"]',
+    lastInspectionDateInput: 'input[name="lastInspectionDt"]',
+    iftaAddDateInput: 'input[name="companyIftaAdd"]',
+    iftaDecalInput: 'input[name="iftaDecal"]',
+    platesInput: 'input[name="licencePlate"]',
+    platesStateInput: 'button[name="licencePlateState"]',
+    deerGuardButton: 'button:contains("Deer Guard")',
+    killSwitchButton: 'button:contains("Kill Switch")',
+    headacheRackButton: 'button:contains("Headache Rack")',
+    saveButton: 'button:contains("Add")',
+    successToast: '.Toastify__toast',
+    truckTable: '[role="rowgroup"]'
+};
+
+export default trucksPageSelectors;
