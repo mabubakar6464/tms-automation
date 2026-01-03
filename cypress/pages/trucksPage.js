@@ -1,6 +1,16 @@
 import trucksSelectors from "../selectors/trucksPage.selectors.js";
 class TrucksPage {
-
+    navigateToHoldingLevel() {
+        cy.get(trucksSelectors.companyLogo).click();
+        cy.get(trucksSelectors.selectIndicator).then($btn => {
+            if ($btn.text().trim() === 'SET') {
+                cy.get(trucksSelectors.closeIcon).click();
+            }
+            else {
+                cy.get(trucksSelectors.selectHolding).click({ force: true });
+            }
+        });
+    }
     goToTrucks() {
         cy.visit('/truck', { failOnStatusCode: false });
         cy.url({ timeout: 10000 }).should('include', '/truck');

@@ -10,6 +10,7 @@ describe('Trucks Module Tests', () => {
   it('TC#03 Verify that user can add a new truck and show in table', () => {
     cy.fixture('trucksData').then(data => {
       TrucksPage.goToTrucks();
+      TrucksPage.navigateToHoldingLevel();
       TrucksPage.clickAddTruck();
       cy.intercept('GET', '**/api/v0.0.2/truck-profiles/**').as('getTrucks');
       TrucksPage.addTruckDetails(data.trucks[0]).then((createdUnitId) => {
