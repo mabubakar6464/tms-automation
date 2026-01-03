@@ -22,7 +22,12 @@ const trucksPageSelectors = {
     headacheRackButton: 'button:contains("Headache Rack")',
     saveButton: 'button:contains("Add")',
     successToast: '.Toastify__toast',
-    truckTable: '[role="rowgroup"]'
+    truckTable: '[role="rowgroup"]',
+    companyLogo: 'button.MuiIconButton-root img',
+    selectIndicator: 'button[role="combobox"]',
+    closeIcon: '.MuiModalClose-root',
+    selectHolding: 'ul[role="listbox"] li:contains("SET")',
+
 };
 
 export default trucksPageSelectors;
