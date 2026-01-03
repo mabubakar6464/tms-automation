@@ -7,7 +7,7 @@ describe('Trucks Module Tests', () => {
     cy.loginSession();
   });
 
-  it('User can add a new truck', () => {
+  it('TC#03 Verify that user can add a new truck and show in table', () => {
     cy.fixture('trucksData').then(data => {
       TrucksPage.goToTrucks();
       TrucksPage.clickAddTruck();
